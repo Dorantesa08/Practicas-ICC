@@ -5,7 +5,7 @@ public class CotizadorPines {
         String cliente1 = "Robbie Valentino";
         int precioCliente1 = 12899;
         int meses = 21;
-        char clasificacionCliente1 = 'E'; // Probar con 'P', 'E', 'R'
+        char clasificacionCliente1 = 'E'; // Se cambia para las pruebas ('P', 'E', 'R')
         double tasaBase = 15.0;
 
         // Validacion de los datos de entrada
@@ -32,7 +32,7 @@ public class CotizadorPines {
         double interesSimple = precioCliente1 * (tasaAplicada / 100.0) * plazoEnAnios;
         double totalSimple = precioCliente1 + interesSimple;
 
-        // Calculo del interes compuesto usando un ciclo for
+        // ACTIVIDAD 2.2: Interes compuesto usando ciclo for
         double tasaMensual = (tasaAplicada / 100.0) / 12.0;
         double saldoAcumulado = precioCliente1;
 
@@ -45,11 +45,10 @@ public class CotizadorPines {
         double totalCompuestoCiclo = saldoAcumulado;
         double interesCompuesto = totalCompuestoCiclo - precioCliente1;
 
-        // Calculo de interes compuesto con la formula Math.pow
+        // ACTIVIDAD 2.2: Interes compuesto con formula directa Math.pow
         double totalCompuestoFormula = precioCliente1 * Math.pow(1.0 + tasaMensual, meses);
 
-        // Impresion de resultados finales
-        System.out.println();
+        // Impresion
         System.out.println("Cliente: " + cliente1 + " (" + clasificacionCliente1 + ")");
         System.out.println("Tasa aplicada: " + tasaAplicada + "%");
         System.out.println("Prestamo: $" + precioCliente1);
@@ -57,7 +56,6 @@ public class CotizadorPines {
         System.out.printf("Interes simple: $%.2f\n", interesSimple);
         System.out.printf("Total con interes simple: $%.2f\n", totalSimple);
         System.out.printf("Interes compuesto: $%.2f\n", interesCompuesto);
-        System.out.printf("Total compuesto (ciclo): $%.2f\n", totalCompuestoCiclo);
-        System.out.printf("Total compuesto (formula): $%.2f\n", totalCompuestoFormula);
+        System.out.printf("Total con interes compuesto: $%.2f\n", totalCompuestoCiclo);
     }
 }
